@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #25D366;
-            --secondary: #128C7E;
+            --primary: #1617E3;
+            --secondary: #7E1CED;
             --dark: #075E54;
-            --light: #DCF8C6;
+            --light: #ecc6f8;
             --accent: #FFD700;
             --text: #2C3E50;
             --white: #FFFFFF;
@@ -170,7 +170,41 @@
             margin-right: 15px;
             flex-shrink: 0;
         }
+        .cta-button1{
+            opacity: 0;
+            background: rgb(9, 204, 58);
+            color: rgb(68, 2, 68);
+            padding: 10px 23px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            margin-top: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            position: absolute;
+            z-index: 10;
+            bottom: 12px;
+            overflow: hidden;
+        }
+        .cta-button1:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        }
         
+        .cta-button1::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, var(--secondary), var(--dark));
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 0;
+        }
         .cta-button {
             display: inline-block;
             background: linear-gradient(to right, var(--primary), var(--secondary));
@@ -253,11 +287,14 @@
                     .hero-image #img{
                         height: 300px;
                         width: 100%;
-                        background: url(logo2.jpeg);
+                        background: url(logo2.png);
                         background-size: 100% 100%;
                         background-position: center;
                         background-repeat: no-repeat;
 
+                    }
+                    .cta-button1{
+                        opacity: 1;
                     }
                 }
         @media (max-width: 768px) {
@@ -270,6 +307,18 @@
                     max-width: 100%;
                     grid-template-columns: 1fr;
                 }
+                    .cta-button1{
+                        opacity: 0;
+                    }
+                .hero-image #img{
+                        width: 100%;
+                        height: 500px;
+                        background: url(logo.jpeg);
+                        background-size: 100% 100%;
+                        background-position: center;
+                        background-repeat: no-repeat;
+
+                }
 
         }
 
@@ -278,6 +327,9 @@
 <body>
     <div class="container">
         <div class="hero-image">
+            <a href="https://t.me/seugrupo_de_apostas" class="cta-button1">
+                <span>CLIQUE AQUI E ENTRE NO GRUPO</span>
+            </a>
             <div id="img" alt="Logo"></div>
         </div>
         
